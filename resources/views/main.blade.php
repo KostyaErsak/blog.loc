@@ -113,7 +113,7 @@
 				<div class="col-md-7 text-left">
 					<div class="display-t">
 						<div class="display-tc animate-box" data-animate-effect="fadeInUp">
-							<h1 class="mb30">Разные мнения <br> Разных людей</a></h1>	
+							<h1 class="mb30">Самые свежие новости с просторов интернета</a></h1>	
 						</div>
 					</div>
 				</div>
@@ -131,16 +131,8 @@
 			<div class="row copyright">
 				<div class="col-md-12 text-center">
 					<p>
-						<small class="block">&copy; 2016 Free HTML5. All Rights Reserved.</small> 
-						<small class="block">Designed by <a href="http://gettemplates.co/" target="_blank">GetTemplates.co</a> Demo Images: <a href="http://unsplash.com/" target="_blank">Unsplash</a></small>
-					</p>
-					<p>
-						<ul class="gtco-social-icons">
-							<li><a href="#"><i class="icon-twitter"></i></a></li>
-							<li><a href="#"><i class="icon-facebook"></i></a></li>
-							<li><a href="#"><i class="icon-linkedin"></i></a></li>
-							<li><a href="#"><i class="icon-dribbble"></i></a></li>
-						</ul>
+						<small class="block">&copy; 2017 Free HTML5. Все права внатуре защищены. Реально!</small> 
+						<small class="block">Шаблон был честно с***н с сайта <a href="http://gettemplates.co/" target="_blank">GetTemplates.co</a>
 					</p>
 				</div>
 			</div>

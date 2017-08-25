@@ -16,13 +16,7 @@ class ContactController extends Controller
     
     public function get(ContactRequest $request) {
         
-        if($request->isMethod('post')){
-            if($validator->fails()){
-                $messages = $validator->errors();
-                return redirect()->back()->withErrors($validator)->withInput(); 
-            }
-            //print_r($request->all());
-        }
+        
         
         return redirect()->back()->with(['message'=>'Запрос отправлен']);
     }

@@ -18,7 +18,7 @@ Route::group(['prefix' => 'admin'], function () {
 });
 
 Route::get('about', ['as'=>'about', 'uses'=>'AboutController@index']);
-Route::get('/home', ['HomeController@index', 'as' => 'home']);
+
 Auth::routes();
 
 Route::group(['middleware'=>'web'], function (){

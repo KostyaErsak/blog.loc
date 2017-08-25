@@ -33,9 +33,9 @@ class ContactRequest extends FormRequest
     public function messages() {
         
         return [
-            'name'=>'Поле :attribute необходимо заполнить',
-            'email'=>'Поле :attribute необходимо заполнить',
-            'text'=>'Поле :attribute необходимо заполнить'
+            'required'=>'Поле :attribute необходимо заполнить',
+            'email'=>'Неверно заполнено поле :attribute',
+            'min'=>'Поле :attribute должно быть не менее :min символов'
         ];
         
     }
