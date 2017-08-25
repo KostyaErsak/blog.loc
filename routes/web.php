@@ -11,21 +11,23 @@
 |
 */
 
-// Route::get('/', function (Request $request) {
-//     return view('firstPage', $request);
-// });
-Route::get('/', ['as'=>'firstPage', 'uses'=>'SiteController@index', 'middleware'=>'web']);
+Route::get('/', ['as'=>'firstPage', 'uses'=>'SiteController@index']);
 
 Route::group(['prefix' => 'admin'], function () {
     Voyager::routes();
 });
 
-Route::get('tags/{id}',['as'=>'tags', 'uses'=>'TagController@index', 'middleware'=>'web']);
+Route::get('about', ['as'=>'about', 'uses'=>'AboutController@index']);
+Route::get('/home', ['HomeController@index', 'as' => 'home']);
+Auth::routes();
 
-Route::get('categories/{id}',['as'=>'categories', 'uses'=>'CategoryController@index', 'middleware'=>'web']);
-
-Route::get('about',['as'=>'about', 'uses'=>'AboutController@index', 'middleware'=>'web']);
-
-Route::get('contact', ['as'=>'contact', 'uses'=>'ContactController@index', 'middleware'=>'web']);
-
-Route::post('contact', ['uses'=>'ContactController@get', 'middleware'=>'web']);
+Route::group(['middleware'=>'web'], function (){
+    
+    Route::get('/post/{id}', ['uses' => 'PostController@index', 'as' => 'single']);
+    Route::post('/post/', ['uses' => 'PostController@addComment', 'as' => 'single_p']);
+    Route::get('tags/{id}',['as'=>'tags', 'uses'=>'TagController@index']);
+    Route::get('categories/{id}',['as'=>'categories', 'uses'=>'CategoryController@index']);
+    Route::get('contact', ['as'=>'contact', 'uses'=>'ContactController@index']);
+    Route::post('contact', ['uses'=>'ContactController@get', 'as' => 'contact']);
+    
+});

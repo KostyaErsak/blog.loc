@@ -1,10 +1,8 @@
 @extends('main')
 
-@section ('Title')
-    <title>Main</title>
+@section ('title')
+    <title>Главная</title>
 @endsection
-
-
 
 @section ('content')
 
@@ -13,7 +11,8 @@
 			<div class="row row-pb-md">
 				<div class="col-md-12">
 					<ul id="gtco-post-list">
-						<li class="full entry animate-box" data-animate-effect="fadeIn"> 
+
+						<!-- <li class="full entry animate-box" data-animate-effect="fadeIn"> 
 							<a href="single.html">
 								<div class="entry-img" style="background-image: url(images/img_1.jpg"></div>
 								<div class="entry-desc">
@@ -74,20 +73,21 @@
 								</div>
 							</a>
 							<a href="single.html" class="post-meta">Business  <span class="date-posted">4 days ago</span></a>
-						</li>
+						</li> -->
 
-
+						@foreach ($posts as $post)
 						<li class="one-half entry animate-box" data-animate-effect="fadeIn">
-							<a href="single.html">
-								<div class="entry-img" style="background-image: url(images/img_7.jpg"></div>
+							<a href="/post/{{ $post->id }}">
+								<div class="entry-img" style="background-image: url(/images/{{ $post->image }}"></div>
 								<div class="entry-desc">
-									<h3>How Web Hosting Can Impact Page Load Speed</h3>
-									<p>She packed her seven versalia, put her initial into the belt and made herself on the way. When she reached the first hills of the Italic Mountains.</p>
+									<h3>{{ $post->title }}</h3>
+									<p>{{ $post->excerpt }}</p>
 								</div>
 							</a>
-							<a href="single.html" class="post-meta">Business  <span class="date-posted">4 days ago</span></a>
+							<a href="/post/{{ $post->id }}" class="post-meta">{{ $post->category->name }}  <span class="date-posted">{{ $post->created_at }}</span></a>
 						</li>
-						<li class="one-half entry animate-box" data-animate-effect="fadeIn">
+						@endforeach
+						<!-- <li class="one-half entry animate-box" data-animate-effect="fadeIn">
 							<a href="single.html">
 								<div class="entry-img" style="background-image: url(images/img_8.jpg"></div>
 								<div class="entry-desc">
@@ -107,8 +107,9 @@
 								</div>
 							</a>
 							<a href="single.html" class="post-meta">Business  <span class="date-posted">4 days ago</span></a>
-						</li>
-						<li class="two-third entry animate-box" data-animate-effect="fadeIn">
+						</li> -->
+
+						<!-- <li class="two-third entry animate-box" data-animate-effect="fadeIn">
 							<a href="single.html">
 								<div class="entry-img" style="background-image: url(images/img_10.jpg"></div>
 								<div class="entry-desc">
@@ -118,6 +119,7 @@
 							</a>
 							<a href="single.html" class="post-meta">Business  <span class="date-posted">4 days ago</span></a>
 						</li>
+ -->
 					</ul>	
 				</div>
 			</div>

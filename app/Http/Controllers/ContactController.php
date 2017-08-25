@@ -17,10 +17,13 @@ class ContactController extends Controller
     public function get(ContactRequest $request) {
         
         if($request->isMethod('post')){
-            
-            print_r($request->all());
+            if($validator->fails()){
+                $messages = $validator->errors();
+                return redirect()->back()->withErrors($validator)->withInput(); 
+            }
+            //print_r($request->all());
         }
         
-        return view('contact');
+        return redirect()->back()->with(['message'=>'Запрос отправлен']);
     }
 }
